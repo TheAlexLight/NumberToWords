@@ -1,4 +1,7 @@
-﻿using _5.NumberToWord.Logic;
+﻿using _5.NumberToWord.Controller;
+using _5.NumberToWord.Logic;
+using _5.NumberToWord.View;
+using ConsoleTaskLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +14,24 @@ namespace _5.NumberToWord
     {
         static void Main(string[] args)
         {
-            NumberData contextData = new NumberData(132543);
+            try
+            {
+                if (args.Length != 1)
+                {
+                    throw new ArgumentException();
+                }
 
-            NumberConverter interpeter  = new NumberConverter();
+                NumberController controller = new NumberController();
 
-            interpeter.ConvertNumberIntoWords(contextData);
+                controller.ExecuteMainOperation(args[0]);
 
-            Console.WriteLine(contextData.Output); 
-
+            }
+            catch (Exception)
+            {
+                ConsolePrinter _printer = new ConsolePrinter();
+                _printer.ShowInstruction(Constant.INSTRUCTION, string.Format(Constant.FIRST_ARGUMENT));
+                Environment.Exit(-1);
+            }
         }
     }
 }
