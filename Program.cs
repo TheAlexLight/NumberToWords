@@ -11,11 +11,13 @@ namespace _5.NumberToWord
     {
         static void Main(string[] args)
         {
-            NumberData contextData = new NumberData(102);
+            NumberData contextData = new NumberData(132543);
 
             NumberConverter interpeter  = new NumberConverter();
 
-            interpeter.Interpret(contextData);
+            interpeter.ConvertNumberIntoWords(contextData);
+
+            Console.WriteLine(contextData.Output); 
 
         }
     }

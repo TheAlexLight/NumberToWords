@@ -50,7 +50,6 @@
     <Compile Include="Logic\TensMultiple.cs" />
     <Compile Include="Logic\TensPower.cs" />
     <Compile Include="Logic\TwoDigits.cs" />
-    <Compile Include="MainApp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
