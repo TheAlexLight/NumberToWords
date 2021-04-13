@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _5.NumberToWord.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,12 @@ namespace _5.NumberToWord
     {
         static void Main(string[] args)
         {
+            NumberData contextData = new NumberData(102);
+
+            NumberConverter interpeter  = new NumberConverter();
+
+            interpeter.Interpret(contextData);
+
         }
     }
 }
